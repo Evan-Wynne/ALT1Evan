@@ -58,15 +58,16 @@ auth.onAuthStateChanged((user) => {
                     document.getElementById('deal-data').style.display = 'block';
                     document.getElementById('no-deal-data').style.display = 'none';
 
-                    // Debugging: Check the structure of your deals data
+                    // Sort dealsData by date
+                    dealsData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
+                    // Debugging: Check the structure of your deals data
                     console.log("Deals Data:", dealsData);
                     console.log("Total Invested:", totalInvested);
                     console.log("Industry Data:", industryData);
                     console.log("Funding Stage Data:", fundingStageData);
 
-
-                    // Generate charts after deals are fetched
+                    // Generate charts after deals are fetched and sorted
                     generateCharts();
                 }
             })
@@ -75,6 +76,35 @@ auth.onAuthStateChanged((user) => {
             });
     }
 });
+
+// Line Chart: Total Amount Invested Over Time
+function generateTotalAmountInvestedChart() {
+    const labels = dealsData.map(deal => new Date(deal.date).toLocaleDateString());
+    const amounts = dealsData.map(deal => deal.amountInvested || 0);
+
+    new Chart(document.getElementById('totalAmountInvestedChart'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Total Amount Invested',
+                data: amounts,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
 
 // Handle deleting a deal
 function handleDeleteDeal(event) {
