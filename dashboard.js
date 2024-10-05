@@ -79,6 +79,8 @@ auth.onAuthStateChanged((user) => {
 // Handle deleting a deal
 function handleDeleteDeal(event) {
     const dealId = event.target.getAttribute('data-id');
+    
+    console.log("Delete button clicked for deal ID:", dealId); // Log which deal is being deleted
 
     if (confirm('Are you sure you want to delete this deal?')) {
         db.collection('users').doc(auth.currentUser.uid).collection('deals').doc(dealId).delete()
@@ -88,6 +90,7 @@ function handleDeleteDeal(event) {
             })
             .catch((error) => {
                 alert('Error deleting deal: ' + error.message);
+                console.error('Delete error:', error); // Log the error to the console
             });
     }
 }
