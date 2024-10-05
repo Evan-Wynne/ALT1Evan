@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Worldwide Tracker Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="form.html">Add a Flight</a></li>
+        </ul>
+        <ul class="nav-right" id="auth-links">
+            
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Welcome to the Mr. Worldwide Flight Tracker</h1>
+    </header>
+
+    <main>
+        <p>This is a flight tracker website where you can log in, enter your flight details, and view them on a dashboard with different graphs.</p>
+        <p>When logging in, feel free to log in using the email test@test.com with password 123123 as there is some data populated there already. Also try creating your own account after/before! </p>
+        <div class="button-container">
+            <a href="form.html" class="button">Get Started</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ALT1 Flight Tracker by Julian Lewandowski. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="auth.js"></script>
+    <script src="navbar.js"></script>
+
+</body>
+</html>

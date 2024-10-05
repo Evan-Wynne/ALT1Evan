@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Flight Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="form.html">Add a Flight</a></li>
+        </ul>
+        <ul class="nav-right" id="auth-links">
+            
+        </ul>
+    </nav>
+    <header>
+        <h2>Enter Your Flight Details</h2>
+    </header>
+    <main>
+        <form id="flight-form">
+            <label for="flight-date">Date:</label>
+            <input type="date" id="flight-date" required><br>
+
+            <label for="flight-number">Flight Number:</label>
+            <input type="text" id="flight-number" placeholder="e.g., FR123" required><br>
+            
+            <label for="airline">Airline:</label>
+            <input type="text" id="airline" placeholder="e.g., Ryanair" required><br>
+
+            <label for="departure-airport">Departure Airport:</label>
+            <input type="text" id="departure-airport" placeholder="e.g., DUB" required><br>
+
+            <label for="arrival-airport">Arrival Airport:</label>
+            <input type="text" id="arrival-airport" placeholder="e.g., AMS" required><br>
+
+            <label for="aircraft">Aircraft Type:</label>
+            <input type="text" id="aircraft" placeholder="e.g., B737" required><br>
+
+            <label for="flight-time-hours">Flight Time:</label>
+            <input type="number" id="flight-time-hours" placeholder="Hours" min="0">
+            <input type="number" id="flight-time-minutes" placeholder="Minutes" min="0" max="59"><br>
+
+            <label for="reason-for-travel">Reason for Travel:</label>
+            <select id="reason-for-travel">
+                <option value="">-- Select Reason --</option>
+                <option value="leisure">Leisure</option>
+                <option value="business">Business</option>
+                <option value="crew">Crew</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <label for="travel-class">Travel Class:</label>
+            <select id="travel-class">
+                <option value="">-- Select Class --</option>
+                <option value="Economy">Economy</option>
+                <option value="Economy Plus">Economy Plus</option>
+                <option value="Business">Business</option>
+                <option value="First">First</option>
+                <option value="Private">Private</option>
+                <option value="Other">Other</option>
+            </select><br>
+
+            <label for="seat-type">Seat Type:</label>
+            <select id="seat-type">
+                <option value="">-- Select Seat Type --</option>
+                <option value="aisle">Aisle</option>
+                <option value="window">Window</option>
+                <option value="middle">Middle</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="auth.js"></script>
+    <script src="navbar.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>
