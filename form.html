@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Flight Details</title>
+    <title>Enter Deal Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,66 +11,49 @@
         <ul class="nav-left">
             <li><a href="index.html">Home</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="form.html">Add a Flight</a></li>
+            <li><a href="form.html">Add a Deal</a></li>
         </ul>
         <ul class="nav-right" id="auth-links">
-            
         </ul>
     </nav>
     <header>
-        <h2>Enter Your Flight Details</h2>
+        <h2>Enter Your Deal Details</h2>
     </header>
     <main>
-        <form id="flight-form">
-            <label for="flight-date">Date:</label>
-            <input type="date" id="flight-date" required><br>
+        <form id="deal-form">
+            <label for="deal-date">Deal Date:</label>
+            <input type="date" id="deal-date" required><br>
 
-            <label for="flight-number">Flight Number:</label>
-            <input type="text" id="flight-number" placeholder="e.g., FR123" required><br>
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" placeholder="e.g., Uber" required><br>
             
-            <label for="airline">Airline:</label>
-            <input type="text" id="airline" placeholder="e.g., Ryanair" required><br>
+            <label for="hq-location">HQ Location:</label>
+            <input type="text" id="hq-location" placeholder="e.g., Dublin" required><br>
 
-            <label for="departure-airport">Departure Airport:</label>
-            <input type="text" id="departure-airport" placeholder="e.g., DUB" required><br>
+            <label for="amount-invested">Amount Invested:</label>
+            <input type="number" id="amount-invested" placeholder="e.g., 250000" required><br>
 
-            <label for="arrival-airport">Arrival Airport:</label>
-            <input type="text" id="arrival-airport" placeholder="e.g., AMS" required><br>
+            <label for="valuation">Valuation:</label>
+            <input type="number" id="valuation" placeholder="e.g., 1000000000" required><br>
 
-            <label for="aircraft">Aircraft Type:</label>
-            <input type="text" id="aircraft" placeholder="e.g., B737" required><br>
-
-            <label for="flight-time-hours">Flight Time:</label>
-            <input type="number" id="flight-time-hours" placeholder="Hours" min="0">
-            <input type="number" id="flight-time-minutes" placeholder="Minutes" min="0" max="59"><br>
-
-            <label for="reason-for-travel">Reason for Travel:</label>
-            <select id="reason-for-travel">
-                <option value="">-- Select Reason --</option>
-                <option value="leisure">Leisure</option>
-                <option value="business">Business</option>
-                <option value="crew">Crew</option>
-                <option value="other">Other</option>
+            <label for="industry-sector">Industry Sector:</label>
+            <select id="industry-sector">
+                <option value="">-- Select Sector --</option>
+                <option value="Fintech">Fintech</option>
+                <option value="SaaS">SaaS</option>
+                <option value="Medtech">Medtech</option>
+                <option value="Hardware">Hardware</option>
             </select><br>
 
-            <label for="travel-class">Travel Class:</label>
-            <select id="travel-class">
-                <option value="">-- Select Class --</option>
-                <option value="Economy">Economy</option>
-                <option value="Economy Plus">Economy Plus</option>
-                <option value="Business">Business</option>
-                <option value="First">First</option>
-                <option value="Private">Private</option>
-                <option value="Other">Other</option>
-            </select><br>
-
-            <label for="seat-type">Seat Type:</label>
-            <select id="seat-type">
-                <option value="">-- Select Seat Type --</option>
-                <option value="aisle">Aisle</option>
-                <option value="window">Window</option>
-                <option value="middle">Middle</option>
-                <option value="other">Other</option>
+            <label for="funding-stage">Funding Stage:</label>
+            <select id="funding-stage">
+                <option value="">-- Select Stage --</option>
+                <option value="Prototype">Prototype</option>
+                <option value="Pre-Seed">Pre-Seed</option>
+                <option value="Seed">Seed</option>
+                <option value="Series-A">Series A</option>
+                <option value="Series-B">Series B</option>
+                <option value="Series-C">Series C</option>
             </select><br>
 
             <button type="submit">Submit</button>

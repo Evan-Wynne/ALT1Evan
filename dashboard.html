@@ -11,31 +11,30 @@
         <ul class="nav-left">
             <li><a href="index.html">Home</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="form.html">Add a Flight</a></li>
+            <li><a href="form.html">Add a Deal</a></li>
         </ul>
         <ul class="nav-right" id="auth-links"></ul>
     </nav>
 
-    <div id="no-flight-data" style="display: none;">
-        <h2>No flights added yet.</h2>
-        <p>Add your first flight!</p>
-        <button id="add-flight-button" class="button">Add a Flight</button>
+    <div id="no-deal-data" style="display: none;">
+        <h2>No deals processed yet.</h2>
+        <p>Add your first deal/investment!</p>
+        <button id="add-deal-button" class="button">Add a Deal!</button>
     </div>
     
-    <div id="flight-data">
+    <div id="deal-data">
         <h2>Welcome to Your Dashboard</h2>
         
-        <table id="flight-table">
+        <table id="deal-table">
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Flight Number</th>
-                    <th>Departure</th>
-                    <th>Arrival</th>
-                    <th>Airline</th>
-                    <th>Aircraft</th>
-                    <th>Travel Class</th>
-                    <th>Flight Time</th>
+                    <th>Company Name</th>
+                    <th>HQ Location</th>
+                    <th>Amount Invested</th>
+                    <th>Valuation</th>
+                    <th>Industry Sector</th>
+                    <th>Funding Stage</th>
                     <th>Menu</th>
                 </tr>
             </thead>
@@ -44,97 +43,48 @@
         </table>
 
         <div class="central-button">
-            <a href="form.html" class="button">Add a Flight</a>
-            <br>
-            <br>
-        </div>
-
-        <!-- Number of Flights Per Year Chart -->
-        <div class="chart-container">
-            <div class="chart-title">Number of Flights Per Year</div>
-            <canvas id="flightsPerYearChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Most Common Airports Chart -->
-        <div class="chart-container">
-            <div class="chart-title">Most Common Airports</div>
-            <canvas id="commonAirportsChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Most Flown Routes Chart -->
-        <div class="chart-container">
-            <div class="chart-title">Most Flown Routes</div>
-            <canvas id="mostFlownRouteChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Airlines Chart -->
-        <div class="chart-container">
-            <div class="chart-title">Airlines</div>
-            <canvas id="airlinesChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Flight Times Chart -->
-        <div class="chart-container">
-            <div class="chart-title">Flight Times</div>
-            <canvas id="flightTimesChart"></canvas>
-            <br>
-        </div>
-
-        <!-- Flight Time Stats -->
-        <div class="flight-time-stats">
-            <p id="averageFlightTime">Average Flight Time: </p>
-            <p id="totalFlightTime">Total Flight Time: </p>
-            <br>
-        </div>
-
-        <!-- Aircraft Types Pie Chart -->
-        <div class="pie-chart-container">
-            <div class="chart-title">Aircraft Types</div>
-            <canvas id="aircraftTypesChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Travel Reason Pie Chart -->
-        <div class="pie-chart-container">
-            <div class="chart-title">Travel Reasons</div>
-            <canvas id="travelReasonChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Travel Class Pie Chart -->
-        <div class="pie-chart-container">
-            <div class="chart-title">Travel Class</div>
-            <canvas id="travelClassChart"></canvas>
-            <br>
-            <br>
-        </div>
-
-        <!-- Seat Type Pie Chart -->
-        <div class="pie-chart-container">
-            <div class="chart-title">Seat Type</div>
-            <canvas id="seatTypeChart"></canvas>
+            <a href="form.html" class="button">Add a Deal</a>
             <br>
             <br>
         </div>
     </div>
+    <h2>Analytics</h2>
 
-    <!-- Firebase and Dashboard Scripts -->
+    <!-- Total Amount Invested Chart -->
+    <div class="chart-container">
+        <div class="chart-title">Total Amount Invested Over Time</div>
+        <canvas id="totalAmountInvestedChart"></canvas>
+        <br>
+        <br>
+    </div>
+
+    <!-- Deals by Industry Sector -->
+    <div class="chart-container">
+        <div class="chart-title">Deals by Industry Sector</div>
+        <canvas id="dealsByIndustryChart"></canvas>
+        <br>
+        <br>
+    </div>
+
+    <!-- Funding Stage Distribution -->
+    <div class="chart-container">
+        <div class="chart-title">Funding Stage Distribution</div>
+        <canvas id="fundingStageChart"></canvas>
+        <br>
+        <br>
+    </div>
+
+    
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="auth.js"></script>
     <script src="navbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dashboard.js"></script>
+    
 </body>
 </html>
+<canvas id="totalAmountInvestedChart" width="400" height="200"></canvas>
+<canvas id="dealsByIndustryChart" width="400" height="200"></canvas>
+<canvas id="fundingStageChart" width="400" height="200"></canvas>
